@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "651237993548",
+    "project_id": "icoach-711c4",
+    "storage_bucket": "icoach-711c4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:651237993548:android:1d9d7960cc2605c43298e9",
+        "android_client_info": {
+          "package_name": "com.icoach"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "651237993548-7k0qfth8qafsackq2vdp1131n58hnfn1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1BY154JG1dFeIb0eZWyXmmvL1y7zmQVg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "651237993548-7k0qfth8qafsackq2vdp1131n58hnfn1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
