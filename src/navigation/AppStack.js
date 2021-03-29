@@ -3,8 +3,6 @@ import {View} from 'react-native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import Antdesign from 'react-native-vector-icons/AntDesign';
-
 import {Home} from '../screens/Home/Home';
 import { AuthContext } from './AuthProvider';
 import { Profile } from '../screens/Profile/Profile';
@@ -45,27 +43,18 @@ const ProfileStack = () => {
       name="Profile"
       component={Profile}
       options={{
-        headerTitleAlign: 'center',
-        headerTitleStyle: {
-          color: '#2e64e5',
-          fontFamily: 'Kufam-SemiBoldItalic',
-          fontSize: 18,
-        },
-        headerStyle: {
-          shadowColor: '#fff',
-          elevation: 0,
-        },
-        headerRight: () => (
-          <View style={{marginRight: 10}}>
-            <Antdesign.Button
-              name="logout"
-              size={22}
-              backgroundColor="#fff"
-              color="#2e64e5"
-              onPress={() => logout()}
-            />
-          </View>
-        ),
+        headerShown: false
+        // headerRight: () => (
+        //   <View style={{marginRight: 10}}>
+        //     <Antdesign.Button
+        //       name="logout"
+        //       size={22}
+        //       backgroundColor="#fff"
+        //       color="#2e64e5"
+        //       onPress={() => logout()}
+        //     />
+        //   </View>
+        // ),
       }}
     />
     
@@ -80,16 +69,7 @@ const SettingsStack = () => {
       name="Settings"
       component={Settings}
       options={{
-        headerTitleAlign: 'center',
-        headerTitleStyle: {
-          color: '#2e64e5',
-          fontFamily: 'Kufam-SemiBoldItalic',
-          fontSize: 18,
-        },
-        headerStyle: {
-          shadowColor: '#fff',
-          elevation: 0,
-        },
+        headerShown: false,
       }}
     />
     

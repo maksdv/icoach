@@ -1,19 +1,12 @@
 import React from 'react';
 
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import {View, ScrollView} from 'react-native';
+import {Header} from '../../components/profile/Header';
 
 export const Profile = () => {
   return (
-    <View>
-      <Text>Profile</Text>
-    </View>
+    <ScrollView>
+      <Header uri="" />
+    </ScrollView>
   );
 };
