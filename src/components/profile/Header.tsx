@@ -5,12 +5,12 @@ import {ProfileImage} from '../media/ProfileImage';
 import {Name} from './Name';
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {paddingVertical: 10},
   firstLineContainer: {
     justifyContent: 'space-around',
     flexDirection: 'row',
     alignItems: 'center',
-    paddingVertical: 20,
+    paddingVertical: 10,
   },
   iconContainer: {
     borderWidth: 2,

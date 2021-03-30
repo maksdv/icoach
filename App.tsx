@@ -19,7 +19,6 @@ import {
 } from 'react-native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
-import {BottomTabs} from './src/navigation/navigation';
 import Providers from './src/navigation';
 
 const App = () => {
