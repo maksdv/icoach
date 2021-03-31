@@ -1,19 +1,22 @@
-import React, {useContext} from 'react';
-import {StyleSheet, View, Text, TouchableOpacity, Image} from 'react-native';
+import React from 'react';
+import {StyleSheet, View, Image} from 'react-native';
+import { PostFooter } from './PostFooter';
+import {PostHeader} from './PostHeader';
 
 const styles = StyleSheet.create({
   container: {},
   image: {
-    resizeMode: 'contain',
-    width: '100%',
+    resizeMode: 'stretch',
+    height: 300
   },
 });
 
 export const Post = ({data}) => {
   return (
     <View style={styles.container}>
-      <Text>{data.item.text}</Text>
-      <Image source={data.item.img} style={styles.image} />
+      <PostHeader uri={data.userAvatar} text={data.userName} />
+      <Image source={data.img} style={styles.image} />
+      <PostFooter text={data.text} likes={data.likes} />
     </View>
   );
 };

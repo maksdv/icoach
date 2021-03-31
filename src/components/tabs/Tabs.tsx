@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import {StyleSheet, View, Text} from 'react-native';
-import {Container, Header, Root, Tab, Tabs as NBTabs} from 'native-base';
+import {Container, Root, Tab, Tabs as NBTabs} from 'native-base';
 import {List} from '../posts/List';
+import { FollowersList } from '../followers/FollowersList';
 
 const styles = StyleSheet.create({
   container: {},
@@ -19,11 +20,8 @@ const FirstRoute = () => (
   </View>
 );
 
-const SecondRoute = () => (
-  <View style={{flex: 1, backgroundColor: '#673ab7'}} />
-);
-
-export const Tabs = ({headers, posts}) => {
+export const Tabs = ({headers, posts, followers}) => {
+  console.log(followers,"->>>>>>>>>>>>")
   return (
     <Root>
       <Container>
@@ -32,7 +30,7 @@ export const Tabs = ({headers, posts}) => {
             <List data={posts} />
           </Tab>
           <Tab heading={headers[1]}>
-            <SecondRoute />
+            <FollowersList data={followers} />
           </Tab>
           <Tab heading={headers[2]}>
             <FirstRoute />

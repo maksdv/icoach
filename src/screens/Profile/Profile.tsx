@@ -7,11 +7,12 @@ import api from '../../utils/mockApi';
 
 export const Profile = () => {
   return (
-    <ScrollView>
+    <ScrollView automaticallyAdjustContentInsets={true}>
       <Header uri="" />
       <Tabs
         headers={['Posts', 'Followers', 'Gallery']}
         posts={api.getUserPosts(api.userId)}
+        followers={api.getUserFriends(api.userId)}
       />
     </ScrollView>
   );

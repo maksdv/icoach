@@ -34,7 +34,7 @@ export const Header = ({uri}) => {
             style={styles.icons}
           />
         </TouchableOpacity>
-        <ProfileImage uri={uri} />
+        <ProfileImage uri={uri} width={140} heigth={140} />
         <TouchableOpacity style={styles.iconContainer}>
           <FontAwesome
             name="message1"

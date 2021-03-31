@@ -4,19 +4,16 @@ import {StyleSheet, View, Text, TouchableOpacity, Image} from 'react-native';
 const styles = StyleSheet.create({
   container: {},
   image: {
-    width: 140,
-    height: 140,
-    resizeMode: 'contain',
     borderRadius: 100,
   },
 });
 
-export const ProfileImage = ({uri}) => {
+export const ProfileImage = ({uri, width, heigth}) => {
   return (
     <TouchableOpacity style={styles.container}>
       <Image
-        source={require('../../assets/profile.png')}
-        style={styles.image}
+        source={uri || require('../../assets/profile.png')}
+        style={[styles.image, {width: width, height: heigth}]}
       />
     </TouchableOpacity>
   );
