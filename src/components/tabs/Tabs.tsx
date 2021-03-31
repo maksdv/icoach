@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 import {Container, Root, Tab, Tabs as NBTabs} from 'native-base';
 import {List} from '../posts/List';
-import { FollowersList } from '../followers/FollowersList';
+import {FollowersList} from '../followers/FollowersList';
 
 const styles = StyleSheet.create({
   container: {},
@@ -21,7 +21,6 @@ const FirstRoute = () => (
 );
 
 export const Tabs = ({headers, posts, followers}) => {
-  console.log(followers,"->>>>>>>>>>>>")
   return (
     <Root>
       <Container>
@@ -30,7 +29,7 @@ export const Tabs = ({headers, posts, followers}) => {
             <List data={posts} />
           </Tab>
           <Tab heading={headers[1]}>
-            <FollowersList data={followers} />
+            <FollowersList followers={followers} />
           </Tab>
           <Tab heading={headers[2]}>
             <FirstRoute />

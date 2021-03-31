@@ -7,7 +7,6 @@ const styles = StyleSheet.create({
 });
 
 export const List = ({data}) => {
-  console.log(data);
   const renderItem = post => <Post data={post.item} />;
   return (
     <SafeAreaView style={styles.container}>

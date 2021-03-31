@@ -4,12 +4,19 @@ import {StyleSheet, View, Text} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import {ProfileImage} from '../media/ProfileImage';
-import { UserInterface } from '../../services/interfaces/user';
+import {UserInterface} from '../../services/interfaces/user';
 
+export type FollowerRowType = Pick<
+  UserInterface,
+  'id' | 'name' | 'surname' | 'profilePicture'
+>;
 
-export type FollowerRowType = Pick<UserInterface, "id" | "name" | "surname" | "profilePicture">
-
-export const FollowerRow = ({id, name, surname, profilePicture}:FollowerRowType) => {
+export const FollowerRow = ({
+  id,
+  name,
+  surname,
+  profilePicture,
+}: FollowerRowType) => {
   return (
     <View style={styles.container}>
       <View style={styles.firstContainer}>
@@ -21,12 +28,14 @@ export const FollowerRow = ({id, name, surname, profilePicture}:FollowerRowType)
         </View>
       </View>
       <View style={styles.iconContainer}>
-        <MaterialCommunityIcons name="account-star-outline" style={{fontSize: 30}} />
+        <MaterialCommunityIcons
+          name="account-star-outline"
+          style={{fontSize: 30}}
+        />
       </View>
     </View>
   );
 };
-
 
 const styles = StyleSheet.create({
   container: {
@@ -42,8 +51,7 @@ const styles = StyleSheet.create({
   nameRow: {
     paddingHorizontal: 10,
   },
-  iconContainer:{
-      width: 40,
-
-  }
+  iconContainer: {
+    width: 40,
+  },
 });

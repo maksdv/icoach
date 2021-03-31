@@ -664,7 +664,7 @@ let posts = [
   }
 ];
 
-export const mocksUsers: FollowerRowType[] = users.map(x =>{
+const mocksUsers: FollowerRowType[] = users.map(x =>{
   const user: FollowerRowType = {id: x.id, name: x.name.first, surname: x.name.last, profilePicture: x.avatar}
   return user;
 })
@@ -672,7 +672,7 @@ export const mocksUsers: FollowerRowType[] = users.map(x =>{
 const mockMsg = `If you’re confused as to how each part of the HTML code serves its purpose, then I will explain it to you here. If you know exactly what each element does and why it’s there, then you may skip to the next section to continue.
 First, we added “Quote Gen” between the <title> tags. The title tag takes the text between it and displays it on the tab of your web browser when it is opened.`
 
-export const mockPosts: PostInterface[] = posts.map(x => {
+const mockPosts: PostInterface[] = posts.map(x => {
   const likes = times(()=>Math.random().toString(), x.likes);
   return {id: x.id, message: x.text, date: Date.now(), image: x.img, likes, 
     comments:[{id:"QWERTY" ,message:mockMsg, date:Date.now(), from: mocksUsers[0], likes: [mocksUsers[1]]}]}
@@ -687,4 +687,6 @@ export default {
   getUserMsgList,
   getMessages,
   userId,
+  mockPosts,
+  mocksUsers
 }
