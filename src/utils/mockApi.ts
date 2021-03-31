@@ -1,3 +1,7 @@
+import { FollowerRowType } from "../components/followers/FollowerRow";
+import { PostInterface } from "../services/interfaces/post";
+import {times, identity} from "ramda";
+
 let whereIsMyMind = [
   "Ooooooh - stop",
   "With your feet in the air and your head on the ground",
@@ -217,24 +221,24 @@ let passenger = [
 ];
 
 
-function getUserInfo(id) {
+function getUserInfo(id: string) {
   return users.find((u) => u.id === id);
 }
 
-function getUserFriends(id) {
+function getUserFriends(id: string) {
   return users.filter((u) => u.id !== id);
 }
 
-function getUserPosts(id) {
+function getUserPosts(id: string) {
   return appendUserToPost(posts.filter((p) => p.userId == id));
 }
 
-function getUserFeed(id) {
+function getUserFeed(id: string) {
   return appendUserToPost(posts.filter((p) => p.userId !== id))
 }
 
-function appendUserToPost(posts) {
-  return posts.map((p) => {
+function appendUserToPost(posts: any[]) {
+  return posts.map((p: { userId: any; userName: string; userAvatar: any; }) => {
     let user = getUserInfo(p.userId);
     p.userName = user.name.first + ' ' + user.name.last;
     p.userAvatar = user.avatar;
@@ -242,7 +246,7 @@ function appendUserToPost(posts) {
   });
 }
 
-function likePost(post) {
+function likePost(post: { liked: boolean; likes: number; }) {
   post.liked = !post.liked;
   post.liked ? post.likes++ : post.likes--;
 }
@@ -313,7 +317,7 @@ function getUserMsgList() {
   ]
 }
 
-function getMessages(userId) {
+function getMessages(userId: any) {
   let user = getUserInfo(userId);
   return user.favoriteSong.map((msg, i) => {
     return {
@@ -659,6 +663,20 @@ let posts = [
     likes: 11
   }
 ];
+
+export const mocksUsers: FollowerRowType[] = users.map(x =>{
+  const user: FollowerRowType = {id: x.id, name: x.name.first, surname: x.name.last, profilePicture: x.avatar}
+  return user;
+})
+
+const mockMsg = `If you’re confused as to how each part of the HTML code serves its purpose, then I will explain it to you here. If you know exactly what each element does and why it’s there, then you may skip to the next section to continue.
+First, we added “Quote Gen” between the <title> tags. The title tag takes the text between it and displays it on the tab of your web browser when it is opened.`
+
+export const mockPosts: PostInterface[] = posts.map(x => {
+  const likes = times(()=>Math.random().toString(), x.likes);
+  return {id: x.id, message: x.text, date: Date.now(), image: x.img, likes, 
+    comments:[{id:"QWERTY" ,message:mockMsg, date:Date.now(), from: mocksUsers[0], likes: [mocksUsers[1]]}]}
+})
 
 export default {
   getUserInfo,
